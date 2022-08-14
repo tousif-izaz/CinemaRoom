@@ -2,7 +2,15 @@ package cinema;
 import java.util.Arrays;
 import java.util.Scanner;
 public class Cinema {
-    
+    /* The whole program is written without many object oriented paradigms. It would be much easier to edit and recycle
+    if it wasnt. In order to accommodate to the project requirements at hyperskill and stay at my own level, these
+    designs were limited to using non-reusable practice.
+     */
+
+
+
+
+    // Method to display seats
     public static void showSeats(int rows, int cols, boolean booked[][]){
         System.out.println("Cinema:");
         System.out.print("  ");
@@ -34,21 +42,20 @@ public class Cinema {
             return new int[]{-99,-1};
         }
         int tickPrice;
-        if(total<=60){
+        if(total<=60){                 // if total seats are less than 60 then every ticket price is same
             tickPrice = 10;
         }else {
-            if(rownum <= rows/2){
+            if(rownum <= rows/2){      // if room is big then the front seats are expensive but the back seats are cheaper
                 tickPrice = 10;
             } else{
                 tickPrice = 8;
             }
         }
-        return new int[]{rownum-1, colnum-1, tickPrice};
+        return new int[]{rownum-1, colnum-1, tickPrice};   //
     }
 
 
     public static void main(String[] args) {
-        // Write your code here
         final int rows;
         final int cols;
         Scanner scanner = new Scanner(System.in);
